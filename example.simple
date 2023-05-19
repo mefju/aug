@@ -1,0 +1,14 @@
+label loop;
+var k;
+var j;
+var i;
+read k;
+if k > 0 then begin
+    j:=1;
+    i:=k;
+    loop:
+        j:=j*i;
+        i:=i-1;
+        if i > 1 then goto loop;
+    print j;
+end;
