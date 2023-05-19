@@ -31,13 +31,12 @@ comment
     ;
 
 opcode
-    : JUMPS ADR
-    | OPCODEZERO
-    | POP
-    | POP ADR
-    | PUSH
-    | PUSH ADR
-    | PUSH NUMBER
+    : jump=JUMPS adr=ADR
+    | comm=OPCODEZERO
+    | pop=POP
+    | pop=POP adr=ADR
+    | push=PUSH adr=ADR
+    | push=PUSH absol=NUMBER
     ;
 
 DATA

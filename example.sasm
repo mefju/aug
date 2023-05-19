@@ -1,17 +1,17 @@
-DATA 0, 0, 0
-0 READ # wczytaj zawartość dla zmiennej k
-1 POP $0 # zapisz ją pod adresem 0, zarezerwowanym dla zmiennej k
+DATA 0,0,0
+0 READ # wczytaj zawartosc dla zmiennej k
+1 POP $0 # zapisz ja pod adresem 0, zarezerwowanym dla zmiennej k
 # instrukcja if – zrobiona w niezoptymalizowany sposób
-2 PUSH $0 # wstaw zawartość zmiennej k na stos
+2 PUSH $0 # wstaw zawartosc zmiennej k na stos
 3 PUSH 0 # wstaw zero na stos
 4 SUB # wylicz k-0
-5 JLEZ $24 # skocz na koniec kodu, jeśli k-0 jest ujemne (czyli warunek jest niespełniony)
+5 JLEZ $24 # skocz na koniec kodu, jeśli k-0 jest ujemne (czyli warunek jest niespelniony)
 6 PUSH 1
 7 POP $1 # przypisz 1 na zmienną j
-# pętla na etykiecie i goto
-8 PUSH $0 # wstaw zawartość zmiennej k na stos
+# petla na etykiecie i goto
+8 PUSH $0 # wstaw zawartosc zmiennej k na stos
 9 POP $2 # przypisz do zmiennej i
-# wylicz wartość i*j
+# wylicz wartosc i*j
 10 PUSH $1
 11 PUSH $2
 12 MUL
@@ -19,14 +19,14 @@ DATA 0, 0, 0
 # zmniejsz i o 1
 14 PUSH $2
 15 PUSH 1
-16 SUB # wyznacz wartość i-1
+16 SUB # wyznacz wartosc i-1
 17 POP $2 # i przypisz ją do i
-# warunek zakończenia pętli
-18 PUSH $2 # wrzuć wartość i na stos
+# warunek zakończenia petli
+18 PUSH $2 # wrzuć wartosc i na stos
 19 PUSH 1 # wrzuć 1 na stos
-20 SUB # wyznacz wartość i-1
-21 JGZ $10 # jeśli i nie wyszło poniżej zakresu, skocz na początek kodu pętli
-# koniec pętli
+20 SUB # wyznacz wartosc i-1
+21 JGZ $10 # jeśli i nie wyszło poniżej zakresu, skocz na początek kodu petli
+# koniec petli
 22 PUSH $1
-23 PRINT # wypisz wartość zmiennej j
-24 STOP # zakończ pro
+23 PRINT # wypisz wartosc zmiennej j
+24 STOP # zakoncz pro
