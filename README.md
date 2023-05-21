@@ -4,7 +4,8 @@ Program został napisany w Pythonie 3.10.6. Wykorzystywana jest konstrukcja `mat
 Użyłem biblioteki ANTLR4 w wersji 4.12.0
 
 Program można uruchomić:
-```cat plik_zrodlowy.simple | python ./translator.py
+```
+cat plik_zrodlowy.simple | python ./translator.py
 ```
 
 Wynik zostanie wysłany na `stdout`
