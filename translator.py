@@ -445,7 +445,14 @@ class LineVisitor(SimpleVisitor):
 
         
 def main(argv):
-    input_stream = FileStream(argv[1],encoding="utf-8")
+    input_string=""
+
+    for line in sys.stdin:
+        input_string+=line
+
+    # input_stream = FileStream(argv[1],encoding="utf-8")
+    input_stream = InputStream(input_string)
+   
     lexer = SimpleLexer(input_stream)
     stream = CommonTokenStream(lexer)
     parser = SimpleParser(stream)
