@@ -2,6 +2,7 @@ label loop;
 var k;
 var j;
 var i;
+var xyz;
 read k;
 if k > 0 then begin
     j:=1;
@@ -12,3 +13,4 @@ if k > 0 then begin
         if i > 1 then goto loop;
     print j;
 end;
+if xyz>0 then k:=xyz; else k:=xyz;
