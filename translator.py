@@ -26,11 +26,16 @@ def secondTranslation(first_program):
     # ułatwi to obliczanie skoków
     second_program={}
     
-    # Stworzenie linii inicjalizacji zmiennych: 
-    data_line="DATA "
-    for x in range(0,len(variables.keys())):
-        data_line=data_line+"0,"
-    data_line=data_line.strip(",")+"\n"
+    # Stworzenie linii inicjalizacji zmiennych.
+    # jeżeli nie ma zmiennych, to linia zostanie pominięta
+    if len(variables.keys())>0: 
+        data_line="DATA "
+        for x in range(0,len(variables.keys())):
+            data_line=data_line+"0,"
+        data_line=data_line.strip(",")+"\n"
+    else:
+        data_line=""
+
 
     # numeracja zmiennych - będzie przydatne do zamiany zmiennych na numery - wykorzystany słownik,
     # w którym kluczami są nazwy zmiennych
